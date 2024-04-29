@@ -1,0 +1,19 @@
+- name: variable multi tasks
+  vars: #variable declaration
+    course: devops
+    trainer: shiva
+    duration: 4months
+  hosts: localhost
+  become: yes
+  tasks:
+  - name:declaring task level variables
+    ansible.builtin.debug:
+      msg: "hello i am madhavi i am learning {{course}} {{trainer}} {{duration}}"
+    vars:
+      course: AWS
+      trainer: kumar
+      duration: 3months
+
+ - name:declaring play level variables
+   ansible.builtin.debug:
+      msg: "hello i am madhavi i am learning {{course}} {{trainer}} {{duration}}"   
