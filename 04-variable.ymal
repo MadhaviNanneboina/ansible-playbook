@@ -1,0 +1,11 @@
+- name: variable declaration
+  vars: #variable declaration in play level
+    pesron1: shiva
+    person2: madhu
+    person3: loukya
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: printing something
+    ansible.builtin.debug:
+      msg: "hello {{person1}} i am {{person2}} my daughter name is {{person3}}"
