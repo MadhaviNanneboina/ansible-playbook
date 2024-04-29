@@ -16,5 +16,5 @@
     
 
   - name: declaring play level variables
-   ansible.builtin.debug:
+    ansible.builtin.debug:
       msg: "hello i am madhavi i am learning {{course}} {{trainer}} {{duration}}"   
