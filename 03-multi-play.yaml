@@ -1,0 +1,14 @@
+- name: Task-1
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: yaml multi task
+    ansible.builtin.debug:
+      msg: hello i am madhavi
+- name: TASK-2
+  hosts: web
+  become: yes
+  tasks:
+  - name: ymal multi task 2
+    ansible.builtin.debug:
+      msg: hello i am shive
