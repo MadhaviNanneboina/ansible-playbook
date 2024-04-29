@@ -1,6 +1,6 @@
 - name: variables from file
   hosts: localhost
-  vars_files:
+  vars_files: #decalring variable file name
   - vars.yaml
   tasks:
   - name: printing variables
