@@ -8,8 +8,17 @@
 - name: word convert
   hosts: localhost
   vars:
-   greetings: "my name is madhavi"
+   greetings: "HELLO SHIVA"
   tasks:
   - name: upper case
     ansible.builtin.debug:
      msg: "{{greetings | upper}}"
+
+- name: word convert
+  hosts: localhost
+  vars:
+   greetings: "my name is madhavi"
+  tasks:
+  - name: lower case
+    ansible.builtin.debug:
+     msg: "{{greetings | lower}}"
