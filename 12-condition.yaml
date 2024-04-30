@@ -9,4 +9,4 @@
   
   - name: saying hello
     ansibile.builtin.debug:
-      msg: "hello {{user}}"
+     msg: "hello {{user}}"
