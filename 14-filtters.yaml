@@ -40,3 +40,33 @@
   - name: printing min and max numbers
     ansible.builtin.debug:
      msg: "min age: {{age | min}} maximum age: {{age | max}}"
+
+- name: dictionary to item/list converting
+  hosts: localhost
+  vars:
+   my_dict:
+      couse: devops
+      duration: 3 months
+      trainer: shiva
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+     msg: "{{my_dict }}"
+  - name: after convert
+    ansible.builtin.debug:
+     msg: "{{my_dict | dict2items }}"  #converting dictionary/map/keyvalue pairs to items/list
+
+- name: items to dictionary converting
+  hosts: localhost
+  vars:
+    list:
+    - shiva
+    - madhu
+    - loukya
+  tasks:
+  - name: befor convert
+    ansible.builtin.debug:
+     msg: "{{list}}"
+  - name: after convert
+    ansible.builtin.debug:
+     msg: "{{list | items2dict }}"
