@@ -11,5 +11,5 @@
       msg: "entered number {{number}} is graterthan 10"
     when: number | int > 10
   - name: printing lessthan 10 value
-    ansibile.builtin.debug:
+    ansible.builtin.debug:
      msg: "entered number {{number}} is lessthan 10"
