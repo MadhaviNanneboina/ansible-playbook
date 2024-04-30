@@ -1,0 +1,12 @@
+- name: conditions
+  hosts: web
+  become: yes
+  tasks:
+  - name: linux command execution
+    ansible.builtin.command: id expense #run a command and take output from that comand
+    register: user
+    ignore_errors: true
+  
+  - name: saying hello
+    ansibile.builtin.debug:
+      msg: "hello {{user}}"
