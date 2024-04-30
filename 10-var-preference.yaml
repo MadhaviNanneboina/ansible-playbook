@@ -1,0 +1,25 @@
+- name: checking variable preference #variable preference checking
+  hosts: localhost
+  vars_prompt:  # prompt variables
+  - name: ROLE
+    prompt: enter your ROLE
+    private: no
+  vars:  # play level variables
+    ROLE: play level devops engineer
+  vars_files:  #variable file declaration
+  - vars.yaml
+  tasks:
+  - name: task leve variables
+    vars:  #task level variables
+     ROLE: task level devops engineer
+    ansible.builtin.debug:
+     msg: "hello i am {{ROLE}}"
+
+
+    #  # fist preference is arguments
+    #  #1.arguments
+    #  2.task level
+    #  3. file level
+    #  4. prompt level
+    #  5. play level
+    #  6. inventory level
