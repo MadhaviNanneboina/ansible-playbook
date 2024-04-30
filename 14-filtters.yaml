@@ -31,3 +31,12 @@
   - name: remove dublicates
     ansible.builtin.debug:
      msg: "{{ numbers | unique}}"
+
+- name: mini and max filttering
+  hosts: localhost
+  vars:
+   age: [ 32, 29, 6, 4, 63]
+  tasks:
+  - name: printing min and max numbers
+    ansible.builtin.debug:
+     msg: "min age: {{age | min}} maximum age: {{age | max}}"
