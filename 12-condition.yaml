@@ -6,6 +6,10 @@
     ansible.builtin.command: id expense #run a command and take output from that comand
     register: user
     ignore_errors: true
+
+  - name: when condition
+    ansible.builtin.command: adduser
+    when: user.rc != 0 #condition user lekapothe create chestundhi
   
   - name: saying hello
     ansible.builtin.debug:
