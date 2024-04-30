@@ -4,3 +4,12 @@
   - name: default variable
     ansible.builtin.debug:
      msg: "hello {{user | default ('dummy') }}"
+
+- name: word convert
+  hosts: localhost
+  vars:
+   greetings: "my name is madhavi"
+  tasks:
+  - name: upper case
+    ansible.builtin.debug:
+     msg: "{{greetings | upper}}"
