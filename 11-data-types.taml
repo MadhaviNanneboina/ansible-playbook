@@ -1,0 +1,16 @@
+- name: data types
+  hosts: localhost
+  vars:
+    course: devops ###string data type
+  list: ####list data type
+  - aws
+  - linux
+  - shell
+  maps:      ###map / object data type
+   duration: 4   ##integer
+   hours: 120
+  realtime: true  ##boolean data type
+  tasks:
+  - name: printing data types
+    ansible.builtin.debug:
+      msg: "hello i am learning {{course}} with {{list}} and {{maps}} is it {{realtime}} project"
