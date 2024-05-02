@@ -60,9 +60,9 @@
   hosts: localhost
   vars:
     list:
-    - {'key': 'course', 'value', 'ansible'}
-    - {'key': 'duration', 'value', '3 months'}
-    - {'key': 'trainer', 'value', 'shiva'}
+    - {'key': 'course', 'value': 'ansible'}
+    - {'key': 'duration', 'value':  '3 months'}
+    - {'key': 'trainer', 'value': 'shiva'}
   tasks:
   - name: befor convert
     ansible.builtin.debug:
