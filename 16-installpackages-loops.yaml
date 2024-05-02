@@ -1,0 +1,13 @@
+- name: installing packages using loop condition
+  hosts: web
+  become: yes
+  tasks:
+  - name: installing packages
+    ansible.builtin.dnf:
+     name: {{item}}
+     state: latest
+     enabled: yes
+    loop:
+    - nginx
+    - mysql
+    - postfix
