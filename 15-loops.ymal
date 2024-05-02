@@ -1,16 +1,13 @@
 - name: applying conditions
   hosts: localhost
-  vars:
-   loop:
-   - madhu
-   - shiva
-   - loukya
   tasks:
   - name: applying loop conditions
     ansible.builtin.debug:
      msg: "hello {{item}}"
-    #loop:
-     #- madhu
-    # - shiva
-     #- loukya
-     #- vishruth
+    loop:
+     - madhu
+     - shiva
+     - loukya
+     - vishruth
+
+#loops should mention task level
