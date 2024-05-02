@@ -6,7 +6,6 @@
     ansible.builtin.dnf:
      name: "{{ item }}" 
      state: latest
-     enabled: yes
     vars:
       loop:
       - nginx
