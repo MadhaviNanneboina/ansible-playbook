@@ -7,7 +7,8 @@
      name: "{{item}}" 
      state: latest
      enabled: yes
-    loop:
-    - nginx
-    - mysql
-    - postfix
+    vars:
+      loop:
+      - nginx
+      - mysql
+      - postfix
