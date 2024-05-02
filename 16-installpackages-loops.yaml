@@ -2,12 +2,26 @@
   hosts: web
   become: yes
   tasks:
+  # - name: installing packages
+  #   ansible.builtin.dnf:
+  #    name: "{{ item }}" 
+  #    state: latest
+    
+  #   loop:
+  #     - nginx
+  #     - mysql
+  #     - postfix
+  #installing some packages and uninstalling some packages
+
+- name: installing packages
+  hosts: localhost
+  become: yes
+  tasks:
   - name: installing packages
     ansible.builtin.dnf:
-     name: "{{ item }}" 
-     state: latest
-    
+     name:
+     state:
     loop:
-      - nginx
-      - mysql
-      - postfix
+     - {name: 'nginx', state: 'absent'} ###items
+     - {name: 'mysql', state: 'absent'} ###items
+     - {name: 'postfix', state: 'latest'} ###items
