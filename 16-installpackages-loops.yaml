@@ -2,7 +2,7 @@
   hosts: web
   become: yes
   tasks:
-  # - name: installing packages
+  # - name: installing packages    ###installing packages in loop one by one
   #   ansible.builtin.dnf:
   #    name: "{{ item }}" 
   #    state: latest
@@ -14,7 +14,7 @@
   #installing some packages and uninstalling some packages
 
 - name: installing packages
-  hosts: localhost
+  hosts: web
   become: yes
   tasks:
   - name: installing packages
@@ -22,6 +22,6 @@
      name: "{{ item.name}}"
      state: "{{ item.state}}"
     loop:
-     - {name: 'nginx', state: 'absent'} ###items
+     - {name: 'nginx', state: 'absent'} ###items absent means remove the package
      - {name: 'mysql', state: 'absent'} ###items
-     - {name: 'postfix', state: 'latest'} ###items
+     - {name: 'postfix', state: 'absent'} ###items
